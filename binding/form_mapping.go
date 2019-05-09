@@ -56,7 +56,7 @@ func mapForm(ptr interface{}, form map[string][]string) error {
 		}
 		inputValue, exists := form[inputFieldName]
 
-		if !exists {
+                if !exists || strings.Join(inputValue, "") == "" {
 			if defaultValue == "" {
 				continue
 			}
